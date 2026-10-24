@@ -283,6 +283,45 @@ footer p{margin:.3rem 0;font-size:.9rem}
 footer a{color:var(--sage-2)}
 footer .fine{margin-top:2rem;font-size:.75rem;opacity:.6}
 
+
+/* ── EVERYTHING CENTERED (Matt 2026-10-24: "make sure everything is centered") ── */
+.hero .wrap{grid-template-columns:1fr;justify-items:center;text-align:center;position:relative}
+.hero .ctas{justify-content:center}
+.hero .eyebrow{justify-content:center}
+.hero .lead{margin-left:auto;margin-right:auto}
+.hero .breath{position:absolute;left:50%;top:50%;width:min(560px,90vw);transform:translate(-50%,-50%)!important;z-index:-1;opacity:.55}
+.hero.go .breath{opacity:.55}
+.hero .breath .word{display:none}
+.hero::before{background:radial-gradient(ellipse at center,rgba(246,241,234,.94) 0%,rgba(246,241,234,.84) 55%,rgba(246,241,234,.55) 100%)!important}
+@media(min-width:821px){.hero .breath{display:grid}}
+.eyebrow{justify-content:center}
+.about .grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:2.6rem;max-width:760px}
+.about p.first::first-letter{float:none;font-size:inherit;padding:0;color:inherit;line-height:inherit}
+.stats{justify-items:center;width:100%}
+.stage{grid-template-columns:1fr;justify-items:center;text-align:center;max-width:760px;margin:0 auto}
+.stage .pics{width:min(560px,100%)}
+.stage .txt{justify-items:center}
+.chips{justify-content:center}
+.steps::before,.steps .fill{left:50%;transform:translateX(-50%)}
+.step{grid-template-columns:1fr;justify-items:center;text-align:center;gap:.6rem}
+.step>div:last-child{background:var(--paper);padding:.2rem .6rem;position:relative;z-index:1;max-width:30rem}
+.card{text-align:center}
+.card .ic{margin-left:auto;margin-right:auto}
+.faqgrid{grid-template-columns:1fr;max-width:760px;margin:0 auto}
+.faqs{width:100%}
+details.faq{width:100%}
+.faqside{position:relative;top:0}
+.faqside img{aspect-ratio:16/9}
+.faqside .note{justify-items:center;text-align:center}
+details.faq summary{justify-content:center;text-align:center}
+details.faq .fq{flex:0 1 auto}
+details.faq .ans-in{padding:0 1.4rem 1.4rem;text-align:center}
+details.faq .ans ul{justify-items:center}
+details.faq .ans li{padding-left:0}
+details.faq .ans li::before{position:static;display:inline-block;margin-right:.6rem;vertical-align:.15em}
+.contact .grid{grid-template-columns:1fr;max-width:620px;margin:0 auto}
+.cinfo a.row{justify-content:center;text-align:center;flex-direction:column;gap:.6rem}
+.cinfo a.row:hover{transform:translateY(-3px)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drift .dt{animation:none}.rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}.portrait img{clip-path:none}}
 </style>
 </head>
