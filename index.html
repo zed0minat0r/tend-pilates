@@ -139,8 +139,11 @@ section{padding:6.5rem 0;position:relative;overflow-x:clip}
 .portrait{position:relative;width:min(320px,100%);justify-self:center}   /* no photo of her yet: keep the placeholder small (Matt 2026-10-24) */
 @media(max-width:820px){.portrait{width:200px}.portrait .frame{inset:10px -10px -10px 10px}.portrait .cap{font-size:.62rem;padding:.3rem .7rem;bottom:10px}}
 .portrait .frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--clay);border-radius:240px 240px 6px 6px;transition:transform 1.2s var(--ease)}
-.portrait img{position:relative;height:auto;border-radius:240px 240px 6px 6px;aspect-ratio:4/5;object-fit:cover;width:100%;clip-path:inset(100% 0 0 0 round 240px 240px 6px 6px);transition:clip-path 1.6s var(--ease)}
-.portrait.in img{clip-path:inset(0 0 0 0 round 240px 240px 6px 6px)}
+.portrait img{position:relative;height:auto;border-radius:240px 240px 6px 6px;aspect-ratio:4/5;object-fit:cover;width:100%}
+/* one simple fade for the whole portrait: the clip-path unveil stuttered on iPhone (Matt 2026-10-24 "glitchy") */
+.portrait{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.portrait.in{opacity:1;transform:none}
+
 .portrait .cap{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);white-space:nowrap;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,253,249,.9);padding:.4rem .9rem;border-radius:99px}
 .about .story{position:relative}
 .about h2{margin:1rem 0 1.6rem}
@@ -322,7 +325,7 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
 .contact .grid{grid-template-columns:1fr;max-width:620px;margin:0 auto}
 .cinfo a.row{justify-content:center;text-align:center;flex-direction:column;gap:.6rem}
 .cinfo a.row:hover{transform:translateY(-3px)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drift .dt{animation:none}.rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}.portrait img{clip-path:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drift .dt{animation:none}.rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}.portrait{opacity:1;transform:none}}
 </style>
 </head>
 <body class="locked">
@@ -374,7 +377,7 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
 <!-- ═══ ABOUT ═══ -->
 <section class="about" id="about">
   <div class="wrap grid">
-    <figure class="portrait rv" style="margin:0">
+    <figure class="portrait" style="margin:0">
       <div class="frame"></div>
       <img src="img/detail.jpg" alt="Placeholder for a portrait of Jolene Smith in her studio" width="880" height="1100" loading="lazy">
       <figcaption class="cap"><span class="ph">Jolene's photo here</span></figcaption>
