@@ -279,7 +279,8 @@ details.faq .ans li::before{content:"";position:absolute;left:0;top:.5em;width:.
 .map{border-radius:10px;overflow:hidden;min-height:360px;border:1px solid var(--line);filter:grayscale(.35) sepia(.12)}
 .map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
 
-footer{background:var(--paper-2);color:var(--ink-2);padding:4rem 0 3rem;text-align:center}
+footer{padding-left:16px!important;padding-right:16px!important;background:#D9E0CF;border-top:1px solid rgba(95,108,82,.25);color:var(--ink-2);   /* soft sage so the footer reads as its own band (Matt 2026-10-24) */
+padding:4rem 0 3rem;text-align:center}
 footer .mark{font-family:var(--display);font-size:2.6rem;color:var(--ink);margin:0 0 .6rem}
 footer .mark i{color:var(--sage-2)}
 footer p{margin:.3rem 0;font-size:.9rem}
@@ -318,8 +319,7 @@ footer .fine{margin-top:2rem;font-size:.75rem;opacity:.6}
 .act small{font-size:.78rem;color:var(--ink-2);word-break:break-word}
 .mapframe{position:relative;max-width:900px;margin:2.2rem auto 0;border-radius:32px;overflow:hidden;height:340px;border:1px solid var(--line)}
 .mapframe iframe{width:100%;height:100%;border:0;filter:grayscale(.55) sepia(.18) saturate(.9);display:block}
-.mapframe .near{position:absolute;left:50%;top:14px;transform:translateX(-50%);white-space:nowrap;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  background:rgba(255,253,249,.92);padding:.5rem 1rem;border-radius:99px;box-shadow:0 10px 24px -14px rgba(47,52,42,.5)}
+.visit .near{display:table;margin:1.2rem auto 0;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:var(--card);padding:.55rem 1.1rem;border-radius:99px;border:1px solid var(--line)}
 /* ── EVERYTHING CENTERED (Matt 2026-10-24: "make sure everything is centered") ── */
 .hero .wrap{grid-template-columns:1fr;justify-items:center;text-align:center;position:relative}
 .hero .ctas{justify-content:center}
@@ -577,8 +577,8 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
     </div>
     <div class="mapframe rv">
       <iframe title="Map to Tend Pilates, 156 Barton Drive, Spring City, PA" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1s156+Barton+Drive,+Spring+City,+PA!6i15"></iframe>
-      <span class="near">Minutes from Phoenixville &amp; Royersford</span>
     </div>
+    <p class="near rv">Minutes from Phoenixville &amp; Royersford</p>
   </div>
 </section>
 </main>
