@@ -30,7 +30,8 @@
   --tap:48px; --ease:cubic-bezier(.25,.1,.15,1); --soft:cubic-bezier(.45,.05,.25,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%}
+section,header{scroll-margin-top:76px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body.locked{overflow:hidden}
 /* paper grain, no request */
@@ -740,6 +741,29 @@ const EQUIP = [
       anim.onfinish=()=>{ if(!opening) d.open=false; anim=null; };
     });
   });
+})();
+
+/* ── IN-PAGE LINKS (Book button etc.): one eased glide to the exact section top, just under the sticky nav.
+   Native smooth scroll lands under the nav and on iPhone can stop short; this measures the target at click time.
+   (Matt 2026-10-24) ── */
+(()=>{
+  const nav=document.querySelector(".nav");
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  let raf=0;
+  const glide=(el)=>{
+    // show the section's content now, so it is not still fading in when we arrive
+    el.querySelectorAll(".rv,.card,.postcard").forEach(x=>x.classList.add("in"));
+    const target=()=>Math.max(0,el.getBoundingClientRect().top+scrollY-(nav?nav.offsetHeight:0)-8);
+    const from=scrollY, dist=Math.abs(target()-from), dur=Math.min(1400,Math.max(650,dist*.45)), t0=performance.now();
+    cancelAnimationFrame(raf);
+    const step=now=>{ const k=Math.min(1,(now-t0)/dur); scrollTo(0,from+(target()-from)*ease(k)); if(k<1) raf=requestAnimationFrame(step); };
+    raf=requestAnimationFrame(step);
+  };
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    const id=a.getAttribute("href"); if(id.length<2) return;
+    a.addEventListener("click",e=>{ const el=document.querySelector(id); if(!el) return; e.preventDefault(); glide(el); history.replaceState(null,"",id); });
+  });
+  ["wheel","touchstart"].forEach(ev=>addEventListener(ev,()=>cancelAnimationFrame(raf),{passive:true}));
 })();
 </script>
 </body>
