@@ -377,6 +377,22 @@ section{padding:4.6rem 0}
 footer{padding-top:2.4rem!important;padding-bottom:2.2rem!important}
 footer .mark{font-size:2rem;margin-bottom:.2rem}
 footer .fine{margin-top:.4rem}
+
+/* ── FOOTER with the company story, studio, contact and links (Matt 2026-10-24: "needs more information") ── */
+footer .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.2rem;max-width:1120px;margin:0 auto;text-align:left}
+@media(max-width:860px){footer .fgrid{grid-template-columns:1fr 1fr;text-align:center}footer .fbrand{grid-column:1/-1}}
+@media(max-width:480px){footer .fgrid{grid-template-columns:1fr}}
+footer .fcol p{margin:.4rem 0;font-size:.9rem;line-height:1.7}
+footer .fbrand p:not(.mark){max-width:30rem}
+@media(max-width:860px){footer .fbrand p:not(.mark){margin-left:auto;margin-right:auto}}
+footer .fh{display:block;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--sage-2);margin-bottom:.5rem}
+footer .small{font-size:.8rem!important;opacity:.8}
+footer .flinks{display:grid;gap:.15rem}
+footer a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s}
+footer a:hover{border-color:currentColor}
+footer{padding-top:3.6rem!important;padding-bottom:2.4rem!important}
+footer .mark{font-size:2.2rem!important;margin:0 0 .5rem!important}
+footer .fine{margin-top:2.6rem!important;padding-top:1.4rem;border-top:1px solid rgba(95,108,82,.2);text-align:center}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.postcard img{transform:none}.drift .dt{animation:none}.rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}.portrait{opacity:1;transform:none}}
 </style>
 </head>
@@ -563,6 +579,8 @@ footer .fine{margin-top:.4rem}
     <div class="faqs">
       <details class="faq rv"><summary><span class="fn">01</span><span class="fq">What should I wear?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>Comfortable, fitted clothing you can move in, so Jolene can see your alignment.</p><ul><li>Leggings or fitted shorts and a fitted top</li><li>Grip socks or bare feet</li><li>Skip loose layers that can catch on the equipment</li></ul></div></div></details>
       <details class="faq rv"><summary><span class="fn">02</span><span class="fq">Where is the studio, and where do I park?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>156 Barton Drive, Spring City, PA, a short drive from Phoenixville and Royersford.</p><ul><li><span class="ph">Parking details to confirm</span></li></ul></div></div></details>
+      <details class="faq rv"><summary><span class="fn">03</span><span class="fq">Do I need any Pilates experience?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>None at all. Because every session is private, it starts exactly where you are.</p><ul><li>Complete beginners welcome</li><li>Experienced students go further, at their own pace</li></ul></div></div></details>
+      <details class="faq rv"><summary><span class="fn">04</span><span class="fq">Can I come if I have an injury?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>Yes. Your first session starts with a conversation about past injuries and current limits, and the work is shaped around them.</p><ul><li>Tell Jolene about any surgeries or conditions beforehand</li><li>If you are under a doctor's care, check with them first</li></ul></div></div></details>
     </div>
     </div>
   </div>
@@ -599,7 +617,25 @@ footer .fine{margin-top:.4rem}
 </main>
 
 <footer>
-  <p class="mark">Tend <i>Pilates</i></p>
+  <div class="fgrid">
+    <div class="fcol fbrand">
+      <p class="mark">Tend <i>Pilates</i></p>
+      <p>Private 1:1 Pilates with Jolene Smith: reformer, Cadillac, spine corrector and mat, one client at a time. 25 years of practice, 20+ years teaching mindful movement.</p>
+    </div>
+    <div class="fcol">
+      <span class="fh">Studio</span>
+      <p><a href="https://maps.google.com/?q=156+Barton+Drive,+Spring+City,+PA" target="_blank" rel="noopener">156 Barton Drive<br>Spring City, PA</a></p>
+      <p class="small">Serving Spring City, Phoenixville &amp; Royersford</p>
+    </div>
+    <div class="fcol">
+      <span class="fh">Contact</span>
+      <p><a href="tel:+16103168242">610-316-8242</a><br><a href="mailto:hello@tendpilates.com">hello@tendpilates.com</a><br><a href="https://www.instagram.com/pilatesbyjolene/" target="_blank" rel="noopener">@pilatesbyjolene</a></p>
+    </div>
+    <div class="fcol">
+      <span class="fh">Explore</span>
+      <p class="flinks"><a href="#about">Meet Jolene</a><a href="#sessions">Sessions</a><a href="#why">Why private</a><a href="#book">Book a session</a></p>
+    </div>
+  </div>
   <p class="fine">© <span id="yr"></span> Tend Pilates · Private Pilates in Spring City, PA</p>
 </footer>
 
