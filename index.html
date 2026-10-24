@@ -358,6 +358,25 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
 .contact .grid{grid-template-columns:1fr;max-width:620px;margin:0 auto}
 .cinfo a.row{justify-content:center;text-align:center;flex-direction:column;gap:.6rem}
 .cinfo a.row:hover{transform:translateY(-3px)}
+
+/* ── TIGHTER RHYTHM (Matt 2026-10-24: "a little long... I do like the majority of the site") - nothing removed, less air ── */
+section{padding:4.6rem 0}
+@media(max-width:700px){section{padding:3.6rem 0}}
+.head{margin-bottom:2.4rem}
+.band{min-height:52vh;padding:4.5rem 0}
+.why .cards{gap:.8rem}
+.card{padding:1.4rem 1.2rem}
+.card .ic{width:36px;height:36px;margin-bottom:.8rem}
+.card h3{font-size:1.3rem;margin-bottom:.35rem}
+@media(max-width:560px){.cards{grid-template-columns:repeat(2,1fr)}.card p{display:none}.card .n{display:none}}
+.steps{gap:1.6rem}
+.drift{padding-bottom:3.4rem}
+.drift img{height:clamp(170px,24vw,260px);width:clamp(140px,19vw,210px)}
+@media(max-width:700px){.postcard{aspect-ratio:1}}
+.mapframe{height:280px}
+footer{padding-top:2.4rem!important;padding-bottom:2.2rem!important}
+footer .mark{font-size:2rem;margin-bottom:.2rem}
+footer .fine{margin-top:.4rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.postcard img{transform:none}.drift .dt{animation:none}.rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}.portrait{opacity:1;transform:none}}
 </style>
 </head>
@@ -522,7 +541,6 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
       </div>
       <!-- ▲▲ end of embed area ▲▲ -->
     </div>
-    <p class="alt rv">Prefer to talk first? Call or text <a href="tel:+16103168242">610-316-8242</a>.</p>
   </div>
 </section>
 
@@ -544,10 +562,7 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
     </aside>
     <div class="faqs">
       <details class="faq rv"><summary><span class="fn">01</span><span class="fq">What should I wear?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>Comfortable, fitted clothing you can move in, so Jolene can see your alignment.</p><ul><li>Leggings or fitted shorts and a fitted top</li><li>Grip socks or bare feet</li><li>Skip loose layers that can catch on the equipment</li></ul></div></div></details>
-      <details class="faq rv"><summary><span class="fn">02</span><span class="fq">What should I expect?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>A calm, private session with the full attention on how you move. Your first session starts with a conversation about your goals and any injuries.</p><ul><li>No experience needed</li><li>Every session is one to one</li><li>The equipment is set up for your body each time</li></ul></div></div></details>
-      <details class="faq rv"><summary><span class="fn">03</span><span class="fq">How do I book?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>Book online through the schedule in the <a href="#book">Book a session</a> section, or call or text 610-316-8242.</p></div></div></details>
-      <details class="faq rv"><summary><span class="fn">04</span><span class="fq">Where is the studio, and where do I park?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>156 Barton Drive, Spring City, PA, a short drive from Phoenixville and Royersford.</p><ul><li><span class="ph">Parking details to confirm</span></li></ul></div></div></details>
-      <details class="faq rv"><summary><span class="fn">05</span><span class="fq">Do you offer group classes?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>No. Tend is private 1:1 sessions only, so every hour is built around one person.</p></div></div></details>
+      <details class="faq rv"><summary><span class="fn">02</span><span class="fq">Where is the studio, and where do I park?</span><span class="fx" aria-hidden="true"></span></summary><div class="ans"><div class="ans-in"><p>156 Barton Drive, Spring City, PA, a short drive from Phoenixville and Royersford.</p><ul><li><span class="ph">Parking details to confirm</span></li></ul></div></div></details>
     </div>
     </div>
   </div>
@@ -585,9 +600,7 @@ details.faq .ans li::before{position:static;display:inline-block;margin-right:.6
 
 <footer>
   <p class="mark">Tend <i>Pilates</i></p>
-  <p>Private 1:1 Pilates · 156 Barton Drive, Spring City, PA</p>
-  <p><a href="tel:+16103168242">610-316-8242</a> · <a href="mailto:hello@tendpilates.com">hello@tendpilates.com</a> · <a href="https://www.instagram.com/pilatesbyjolene/" target="_blank" rel="noopener">@pilatesbyjolene</a></p>
-  <p class="fine">© <span id="yr"></span> Tend Pilates · Serving Spring City, Phoenixville and Royersford</p>
+  <p class="fine">© <span id="yr"></span> Tend Pilates · Private Pilates in Spring City, PA</p>
 </footer>
 
 <script>
