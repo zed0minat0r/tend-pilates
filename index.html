@@ -134,11 +134,12 @@ section{padding:6.5rem 0;position:relative;overflow-x:clip}
 @keyframes tick{to{transform:translateX(-50%)}}
 
 /* ── ABOUT ── */
-.about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:center}
+.about .grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:4rem;align-items:center}
 @media(max-width:820px){.about .grid{grid-template-columns:1fr;gap:3rem}}
-.portrait{position:relative}
+.portrait{position:relative;width:min(320px,100%);justify-self:center}   /* no photo of her yet: keep the placeholder small (Matt 2026-10-24) */
+@media(max-width:820px){.portrait{width:200px}.portrait .frame{inset:10px -10px -10px 10px}.portrait .cap{font-size:.62rem;padding:.3rem .7rem;bottom:10px}}
 .portrait .frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--clay);border-radius:240px 240px 6px 6px;transition:transform 1.2s var(--ease)}
-.portrait img{position:relative;border-radius:240px 240px 6px 6px;aspect-ratio:4/5;object-fit:cover;width:100%;clip-path:inset(100% 0 0 0 round 240px 240px 6px 6px);transition:clip-path 1.6s var(--ease)}
+.portrait img{position:relative;height:auto;border-radius:240px 240px 6px 6px;aspect-ratio:4/5;object-fit:cover;width:100%;clip-path:inset(100% 0 0 0 round 240px 240px 6px 6px);transition:clip-path 1.6s var(--ease)}
 .portrait.in img{clip-path:inset(0 0 0 0 round 240px 240px 6px 6px)}
 .portrait .cap{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);white-space:nowrap;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,253,249,.9);padding:.4rem .9rem;border-radius:99px}
 .about .story{position:relative}
@@ -237,11 +238,10 @@ details.faq .ans li::before{content:"";position:absolute;left:0;top:.5em;width:.
 
 
 /* ── DRIFT: an endless, slow row of studio photographs ── */
-.drift{overflow:hidden;padding:2.6rem 0 1rem;background:var(--paper-2)}
-.drift .dt{display:flex;gap:1rem;width:max-content;animation:drift 90s linear infinite}
+.drift{overflow:hidden;padding:0 0 5rem;margin-top:-3rem;background:var(--paper-2)}
+.drift .dt{display:flex;gap:.8rem;width:max-content;animation:drift 40s linear infinite}   /* Matt: "takes a while to start moving" */
 .drift:hover .dt{animation-play-state:paused}
-.drift img{height:clamp(220px,34vw,360px);width:auto;aspect-ratio:auto;border-radius:22px;object-fit:cover;flex:none}
-.drift img:nth-child(odd){margin-top:2.2rem}
+.drift img{height:clamp(200px,30vw,320px);width:clamp(160px,24vw,260px);border-radius:18px;object-fit:cover;flex:none}
 @keyframes drift{to{transform:translateX(-50%)}}
 
 /* ── QUOTE BAND: full-bleed window light with a slow parallax ── */
@@ -375,12 +375,12 @@ footer .fine{margin-top:2rem;font-size:.75rem;opacity:.6}
 <!-- ═══ INSIDE THE STUDIO: a slow, endless drift of photographs ═══ -->
 <div class="drift" aria-label="Inside the studio">
   <div class="dt" id="drift">
-    <img src="img/window.jpg" alt="Morning light through linen curtains in the studio" loading="lazy">
-    <img src="img/springs.jpg" alt="The springs at the end of a reformer carriage" loading="lazy">
-    <img src="img/props.jpg" alt="A magic circle, soft balls and a foam roller on an oak shelf" loading="lazy">
-    <img src="img/cadillac.jpg" alt="The Cadillac trapeze table" loading="lazy">
-    <img src="img/corner.jpg" alt="A quiet corner of the studio with eucalyptus" loading="lazy">
-    <img src="img/mat.jpg" alt="A mat and magic circle in the sun" loading="lazy">
+    <img src="img/window.jpg" alt="Morning light through linen curtains in the studio">
+    <img src="img/springs.jpg" alt="The springs at the end of a reformer carriage">
+    <img src="img/props.jpg" alt="A magic circle, soft balls and a foam roller on an oak shelf">
+    <img src="img/cadillac.jpg" alt="The Cadillac trapeze table">
+    <img src="img/corner.jpg" alt="A quiet corner of the studio with eucalyptus">
+    <img src="img/mat.jpg" alt="A mat and magic circle in the sun">
   </div>
 </div>
 
